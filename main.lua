@@ -10,10 +10,7 @@ OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
     local NameCallMethod = getnamecallmethod()
 
     if tostring(string.lower(NameCallMethod)) == "kick" then
-        if getgenv().SendNotifications == true then
-          print("Bypassed A ClientSide Kick")
-        end
-        
+          error("Bypassed jmes kick")
         return nil
     end
     
