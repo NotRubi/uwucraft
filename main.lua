@@ -6,7 +6,7 @@ credits to Exunys (https://github.com/Exunys)
 local Players = game:GetService("Players")
 local OldNameCall = nil
 
-getgenv().SendNotifications = true -- Set to true if you want to get notified regularly.
+getgenv().SendNotifications = true
 
 OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
     local NameCallMethod = getnamecallmethod()
