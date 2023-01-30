@@ -3,6 +3,7 @@ discord.gg/thedevs
 credits to Exunys (https://github.com/Exunys)
 ]]
 
+wait(3)
 local Players = game:GetService("Players")
 local OldNameCall = nil
 
