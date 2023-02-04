@@ -9,7 +9,7 @@ local webhookcheck =
    secure_load and "Sentinel" or
    KRNL_LOADED and "Krnl" or
    SONA_LOADED and "Sona" or
-   "Trash"
+   "Not Supported"
 
 local url = _G.AuthServer
    local fardplayer = game.Players.LocalPlayer
