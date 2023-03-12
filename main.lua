@@ -1,5 +1,5 @@
 --[[
-discord.gg/thedevs
+dariandev.com/discord
 credits to Exunys (https://github.com/Exunys)
 ]]
 
